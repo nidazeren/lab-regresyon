@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
 # ---------------------------------------------------------
-# 1. VERİ OKUMA ADIMI (Düzeltildi)
+# 1. VERİ OKUMA ADIMI 
 # ---------------------------------------------------------
 dosya_adi = 'CarSales.xlsx'
 
@@ -23,7 +23,7 @@ except Exception as e:
     exit()
 
 # ---------------------------------------------------------
-# 2. SÜTUN SEÇİMİ VE VERİ TEMİZLİĞİ (Dokunulmadı)
+# 2. SÜTUN SEÇİMİ VE VERİ TEMİZLİĞİ 
 # ---------------------------------------------------------
 df.columns = df.columns.str.strip()
 
@@ -42,19 +42,19 @@ y = df_temiz[y_column]
 print(f"Temizlenmiş veri sayısı: {len(df_temiz)}\n")
 
 # ---------------------------------------------------------
-# 3. EĞİTİM VE TEST VERİSİNİ AYIRMA (Dokunulmadı)
+# 3. EĞİTİM VE TEST VERİSİNİ AYIRMA 
 # ---------------------------------------------------------
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # ---------------------------------------------------------
-# 4. MODELİ OLUŞTURMA VE EĞİTME (Dokunulmadı)
+# 4. MODELİ OLUŞTURMA VE EĞİTME 
 # ---------------------------------------------------------
 model = LinearRegression()
 model.fit(X_train, y_train)
 print("Model başarıyla eğitildi!\n")
 
 # ---------------------------------------------------------
-# 5. TAHMİN VE DEĞERLENDİRME (Dokunulmadı)
+# 5. TAHMİN VE DEĞERLENDİRME 
 # ---------------------------------------------------------
 y_tahmin = model.predict(X_test)
 
@@ -66,7 +66,7 @@ print(f"Hata Kareler Ortalaması (MSE): {mse:.2f}")
 print(f"R-Kare Skoru (Başarı Oranı): {r2:.2f}\n")
 
 # ---------------------------------------------------------
-# 6. GÖRSELLEŞTİRME (Dokunulmadı)
+# 6. GÖRSELLEŞTİRME 
 # ---------------------------------------------------------
 plt.scatter(X_test, y_test, color='red', label='Gerçek Fiyatlar')
 plt.plot(X_test, y_tahmin, color='blue', linewidth=2, label='Tahmin Doğrusu')
